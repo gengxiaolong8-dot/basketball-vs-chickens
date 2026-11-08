@@ -11,31 +11,32 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="stylesheet" href="launcher.css?v=1">
-  <script src="launcher.js?v=1" defer></script>
+  <link rel="stylesheet" href="launcher.css?v=6">
+  <script src="locale.js?v=6" defer></script>
+  <script src="launcher.js?v=6" defer></script>
 </head>
 <body>
   <main class="cover">
-    <header><a class="brand" href="./" aria-label="Basketball vs Chickens home"><span class="brand-ball" aria-hidden="true">●</span> COURT CHAOS</a><span class="edition">A tiny survival game</span></header>
+    <header><a class="brand" href="./" aria-label="Basketball vs Chickens home"><span class="brand-ball" aria-hidden="true">●</span> <span data-i18n="brand">COURT CHAOS</span></a><div class="header-tools"><span class="edition" data-i18n="edition">A tiny survival game</span><label class="language-label"><span class="sr-only" data-i18n="language">Language</span><select id="language" aria-label="Language"><option value="en">English</option><option value="zh">简体中文</option></select></label></div></header>
     <div class="content">
       <div class="intro">
-        <p class="eyebrow"><span></span> THE FLOCK IS COMING</p>
-        <h1>Basketball<br><span class="vs">vs</span> <span class="yellow">Chickens.</span></h1>
-        <p class="tagline">One ball. An entire flock.<br>Roll, power up, and survive <strong>two minutes.</strong></p>
-        <div class="actions"><a class="play" href="play.html">Play now <span aria-hidden="true">↗</span></a><button id="install" class="install" type="button">Add to home screen <span aria-hidden="true">＋</span></button></div>
-        <p class="small-note">Free to play · No account needed</p>
+        <p class="eyebrow"><span></span> <span data-i18n="eyebrow">THE FLOCK IS COMING</span></p>
+        <h1><span data-i18n="basketball">Basketball</span><br><span class="vs" data-i18n="vs">vs</span> <span class="yellow" data-i18n="chickens">Chickens.</span></h1>
+        <p class="tagline"><span data-i18n="tagline">One ball. An entire flock.</span><br><span data-i18n="tagline2">Roll, power up, and survive </span><strong data-i18n="twoMinutes">two minutes.</strong></p>
+        <div class="actions"><a class="play" href="play.html"><span data-i18n="play">Play now</span> <span aria-hidden="true">↗</span></a><button id="install" class="install" type="button"><span data-i18n="install">Add to home screen</span> <span aria-hidden="true">＋</span></button></div>
+        <p class="small-note"><span data-i18n="free">Free to play · No account needed</span></p>
       </div>
       <div class="court" role="img" aria-label="A basketball faces a flock of pixel chickens on a basketball court">
         <div class="court-line"></div><div class="court-circle"></div><div class="key"></div>
-        <span class="court-label">HOME COURT / 02:00</span>
+        <span class="court-label"><span data-i18n="court">HOME COURT / 02:00</span></span>
         <div class="hero-shadow"></div><img class="hero" src="launcher-art/hero.png" alt="" width="180" height="180">
         <img class="chick c1" src="launcher-art/bat.png" alt="" width="84" height="84"><img class="chick c2" src="launcher-art/slime.png" alt="" width="88" height="88"><img class="chick c3" src="launcher-art/bat.png" alt="" width="66" height="66"><img class="boss" src="launcher-art/demon.png" alt="" width="108" height="108">
-        <span class="badge">YOU GOT THIS.</span>
+        <span class="badge"><span data-i18n="badge">YOU GOT THIS.</span></span>
       </div>
     </div>
-    <section class="how" aria-label="How to play"><div><span class="step">01</span><p><strong>Keep rolling</strong><span>Touch and hold to move.</span></p></div><div><span class="step">02</span><p><strong>Power up</strong><span>Collect gems. Pick upgrades.</span></p></div><div><span class="step">03</span><p><strong>Beat the clock</strong><span>Survive 2:00. Claim victory.</span></p></div></section>
-    <footer><span>Attacks happen automatically. Just keep moving.</span><span>First play downloads about 28 MB.</span></footer>
+    <section class="how" aria-label="How to play"><div><span class="step">01</span><p><strong data-i18n="step1">Keep rolling</strong><span data-i18n="step1text">Touch and hold to move.</span></p></div><div><span class="step">02</span><p><strong data-i18n="step2">Power up</strong><span data-i18n="step2text">Collect gems. Pick upgrades.</span></p></div><div><span class="step">03</span><p><strong data-i18n="step3">Beat the clock</strong><span data-i18n="step3text">Survive 2:00. Claim victory.</span></p></div></section>
+    <footer><span data-i18n="auto">Attacks happen automatically. Just keep moving.</span><span data-i18n="download">First play downloads about 28 MB.</span></footer>
   </main>
-  <dialog id="install-help" aria-labelledby="install-title"><button class="close" id="close-help" aria-label="Close instructions">×</button><img src="icon-192.png" width="64" height="64" alt=""><h2 id="install-title">Your own game icon.</h2><p>Open this page in your phone's browser, then add it to your home screen.</p><ol><li><strong>iPhone / Safari:</strong> tap Share, then Add to Home Screen. If shown, enable Open as Web App.</li><li><strong>Android:</strong> open the browser menu, then choose Install app or Add to Home screen.</li></ol><p class="hint">In WeChat? Use the top-right menu to open this link in your phone's browser first. Menu names vary by browser.</p><button id="done-help" class="play" type="button">Got it</button></dialog>
+  <dialog id="install-help" aria-labelledby="install-title"><button class="close" id="close-help" aria-label="Close instructions">×</button><img src="icon-192.png" width="64" height="64" alt=""><h2 id="install-title" data-i18n="installTitle">Your own game icon.</h2><p data-i18n="installIntro">Open this page in your phone's browser, then add it to your home screen.</p><ol><li data-i18n="ios">iPhone / Safari: tap Share, then Add to Home Screen. If shown, enable Open as Web App.</li><li data-i18n="android">Android: open the browser menu, then choose Install app or Add to Home screen.</li></ol><p class="hint" data-i18n="wechat">In WeChat? Use the top-right menu to open this link in your phone's browser first. Menu names vary by browser.</p><button id="done-help" class="play" type="button" data-i18n="gotIt">Got it</button></dialog>
 </body>
 </html>

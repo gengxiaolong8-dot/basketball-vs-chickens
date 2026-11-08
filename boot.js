@@ -1,5 +1,6 @@
 // A visible, accessible loading screen while the local Python game starts.
 (() => {
+  const t = text => window.gameText ? window.gameText(text) : text;
   let panel, message, progress, start, retry, details;
   let stage = 'Downloading game files...';
   let received = 0;
@@ -11,12 +12,12 @@
 
   function render() {
     if (!panel || finished) return;
-    message.textContent = stage;
+    message.textContent = t(stage);
     progress.value = Math.min(95, Math.round(received / total * 100));
     const info = document.getElementById('infobox');
     if (!failed && !startRequested && info && info.textContent.includes('Ready to start')) {
       stage = 'Ready! Tap Start Game to play with sound.';
-      message.textContent = stage;
+      message.textContent = t(stage);
       progress.value = 100;
       start.hidden = false;
     }
@@ -32,7 +33,7 @@
     if (finished || failed) return;
     failed = true;
     stage = 'Could not start the game. Check your connection, then reload.';
-    if (details) { details.hidden = false; details.textContent = String(text); }
+    if (details) { details.hidden = false; details.textContent = t(String(text)); }
     if (retry) retry.hidden = false;
     render();
   };
@@ -60,11 +61,11 @@
     panel = document.createElement('section');
     panel.id = 'game-loader';
     panel.innerHTML = `<div class="load-card"><img src="favicon.png" alt="" width="64" height="64">
-      <h1>Basketball vs Chickens</h1><p id="load-message" role="status" aria-live="polite"></p>
+      <h1>${t('Basketball vs Chickens')}</h1><p id="load-message" role="status" aria-live="polite"></p>
       <progress id="load-progress" max="100" value="0" aria-label="Game download progress"></progress>
-      <p class="load-note">First visit downloads about 28 MB.<br>Keep this page open while it loads.</p>
-      <button id="start-game" type="button" hidden>Start Game</button>
-      <button id="retry-game" type="button" hidden>Reload</button><pre id="load-details" hidden></pre></div>`;
+      <p class="load-note">${t('First visit downloads about 28 MB.')}<br>${t('Keep this page open while it loads.')}</p>
+      <button id="start-game" type="button" hidden>${t('Start Game')}</button>
+      <button id="retry-game" type="button" hidden>${t('Reload')}</button><pre id="load-details" hidden></pre></div>`;
     document.body.appendChild(panel);
     message = document.getElementById('load-message');
     progress = document.getElementById('load-progress');
@@ -75,18 +76,19 @@
       startRequested = true;
       start.hidden = true;
       stage = 'Starting the game...';
-      message.textContent = stage;
+      message.textContent = t(stage);
       // This real click also unlocks audio through pygbag's window listener.
     });
     retry.addEventListener('click', () => location.reload());
     render();
   });
+  window.addEventListener('gamelanguagechange', render);
   const timer = setInterval(render, 250);
   setTimeout(() => {
     if (!finished && !failed && retry) {
       retry.hidden = false;
       const note = panel.querySelector('.load-note');
-      if (start.hidden) note.textContent = 'This connection is taking longer than usual. You can keep waiting or reload.';
+      if (start.hidden) note.textContent = t('This connection is taking longer than usual. You can keep waiting or reload.');
     }
   }, 60000);
 })();
