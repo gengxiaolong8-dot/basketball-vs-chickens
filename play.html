@@ -1,4 +1,4 @@
-<html lang="en-us"><script src="locale.js?v=6"></script><script src="boot.js?v=6"></script><script src="runtime/0.9.3/pythons.js" type=module id="site" data-python="python3.12" data-LINES=42 data-COLUMNS=132 data-os="vtx,snd,gui" async defer>#<!--
+<html lang="en-us"><script src="locale.js?v=7"></script><script src="boot.js?v=6"></script><script src="runtime/0.9.3/pythons.js" type=module id="site" data-python="python3.12" data-LINES=42 data-COLUMNS=132 data-os="vtx,snd,gui" async defer>#<!--
 
 print("""
 Loading Basketball vs Chickens from game.apk
@@ -308,6 +308,11 @@ function show_infobox() {
 .load-card img{image-rendering:pixelated}.load-card h1{font-size:25px;line-height:1.2}.load-card progress{width:100%;height:12px;accent-color:#63d5ca}.load-note{color:#a1b8c5;font-size:14px;line-height:1.6}
 .load-card button{min-height:48px;border:0;border-radius:10px;padding:12px 24px;background:#65d6c8;color:#10232b;font:bold 16px system-ui;cursor:pointer;margin:8px}
 .load-card button[hidden]{display:none}.load-card pre{text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;color:#ffd2bd;font:12px monospace;max-height:120px;overflow:auto}
+</style><style>
+/* Keep the portrait ratio even if the runtime first measures a 1 x 1 canvas. */
+#canvas{position:fixed!important;inset:0!important;margin:auto!important;
+width:min(100vw,55.7142857vh)!important;height:min(100vh,179.4871795vw)!important;
+width:min(100vw,55.7142857dvh)!important;height:min(100dvh,179.4871795vw)!important}
 </style></head>
 
 <body>

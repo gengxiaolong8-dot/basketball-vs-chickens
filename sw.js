@@ -1,7 +1,7 @@
 // Cache only the small launcher. The game still needs an internet connection.
-const CACHE = 'court-chaos-launcher-v6';
+const CACHE = 'court-chaos-launcher-v7';
 const SHELL = ['./', './index.html', './launcher.css?v=6', './launcher.js?v=6',
-  './icon-192.png', './icon-512.png', './manifest.webmanifest', './manifest.zh.webmanifest', './locale.js?v=6',
+  './icon-192.png', './icon-512.png', './manifest.webmanifest', './manifest.zh.webmanifest', './locale.js?v=7',
   './launcher-art/hero.png', './launcher-art/bat.png', './launcher-art/slime.png', './launcher-art/demon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)));

@@ -37,7 +37,7 @@
     const select = document.getElementById('language');
     if (select) { select.value = language; select.setAttribute('aria-label', language === 'zh' ? '语言' : 'Language'); }
     const play = document.querySelector('a.play');
-    if (play) play.href = `play.html?lang=${language}`;
+    if (play) play.href = `play.html?lang=${language}&v=7`;
     const manifest = document.querySelector('link[rel="manifest"]');
     if (manifest) manifest.href = language === 'zh' ? 'manifest.zh.webmanifest' : 'manifest.webmanifest';
     document.querySelector('meta[name="apple-mobile-web-app-title"]')?.setAttribute('content', document.title);
